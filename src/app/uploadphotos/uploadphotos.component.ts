@@ -21,6 +21,10 @@ export class UploadphotosComponent implements OnInit {
   response;
   imageURL;
 
+  path = 'plop'
+
+  urlComplete = 'http://toto.fr/plop'
+
 
   constructor(private formBuilder: FormBuilder, private uploadService: UploadService) { }
 

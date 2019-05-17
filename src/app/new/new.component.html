@@ -82,6 +82,23 @@
 							</header>
 						</section>
 
+						<section>
+							<h1 center>Classement</h1>
+							<div class = "leaderboard">
+							
+							<article class="mini-post" *ngFor="let team of teams">
+								<header>
+									<h3>{{team.name}}</h3>
+									<p>a déjà parcouru {{team.distance/1000}}km</p>
+									<p>{{team.score}}pts</p>
+									<a href="#" class="author"><img src="{{ team.picture }}" alt="" /></a>
+								</header>
+								
+							</article>
+							</div>  
+									
+						</section>
+
 
 					
 										
@@ -93,7 +110,7 @@
 							
 							      	<div class = "leaderboard">
 							      			<div *ngFor="let team of teams">
-							      				<img [src]="team.picture.url" class="team-picture"> 
+							      				<img src="{{ team.picture }}" alt="" />
 							      				<section id="sidebar"></section>
 							      				<h4>{{team.name}}</h4>
 							      				a déjà parcouru {{team.distance/1000}}km
