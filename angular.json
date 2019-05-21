@@ -28,7 +28,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              
+              "./node_modules/keycloak-js/dist/keycloak.js"
             ],
             "es5BrowserSupport": true
           },
