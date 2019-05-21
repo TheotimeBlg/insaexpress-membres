@@ -25,7 +25,7 @@ export class KeycloakService {
           KeycloakService.auth.loggedIn = true;
           KeycloakService.auth.authz = keycloakAuth;
           KeycloakService.auth.logoutUrl = keycloakAuth.authServerUrl
-            + '/realms/demo/protocol/openid-connect/logout?redirect_uri='
+            + '/realms/insaexpress/protocol/openid-connect/logout?redirect_uri='
             + document.baseURI;
           resolve();
         })
