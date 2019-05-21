@@ -3,56 +3,42 @@
 	<div id="main">
 
 		<!-- Post -->
-		<article class="post">
+		<article class="post" style="width: 40%; float: right;">
 			<header>
 				<div class="title">
-					<h2><a href="single.html">Observe les défis réalisés par équipe</a></h2>
-				</div>
-				<div class="meta">
-					<time class="published" datetime="2015-11-01">November 1, 2015</time>
+					<h2><a>Les équipes</a></h2>
 				</div>
 			</header>
 
-			<div *ngFor="let team of teams">
-				<article>
-				<h2><a href="#">{{team.name}}</a></h2>
+			<div *ngFor="let team of teams ">
+				<h2 class="button large fit" placement="left" *ngFor="let achievement of achievements " ngbPopover="{{achievement.name}}" popoverTitle="la liste" ><a href="#">{{team.name}}</a></h2>
 				
-				<br>
-				</article>
+			</div>
 
+			<button type="button" class="button large fit" placement="bottom"
+			        ngbPopover="hey" >
+			  Popover on bottom
+			</button>
+
+		</article>
+
+		<article class="post" style="width: 40%; float: left;">
+			<header>
+				<div class="title">
+					<h2><a>Les défis</a></h2>
+				</div>
+			</header>
+
+			<div *ngFor="let achievement of achievements">
+				<h2 class="button large fit" ><a href="#">{{achievement.name}}</a></h2>
 			</div>
 		</article>
+
+
+		
+
 	</div>
 
-	<section id="sidebar">
-
-		<section id="intro">
-			<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
-			<header>
-				
-			</header>
-		</section>
-
-		<section>
-			<p *ngFor="let achievement of achievements" class="button large fit" >{{achievement.name}}</p>
-
-		</section>
-			
-		      							
-								
-
-		<!-- Footer -->
-		<section id="footer">
-			<ul class="icons">
-				<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-				<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
-			</ul>
-			<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-		</section>
-	</section>
 
 			
 

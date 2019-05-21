@@ -15,7 +15,7 @@ import { HttpModule } from '@angular/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule, NbListModule } from '@nebular/theme';
 
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import { DefisComponent } from './defis/defis.component';
@@ -41,7 +41,8 @@ import { ValidatephotosComponent } from './validatephotos/validatephotos.compone
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbCardModule,
-    NbListModule
+    NbListModule,
+    NgbModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

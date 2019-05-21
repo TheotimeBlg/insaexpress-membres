@@ -26,6 +26,14 @@ export class TeamAchievement {
   achievement: Achievement;
   team_id: number;
   picture: string;
+  validation: boolean;
+}
+
+export class File {
+  achievement: Achievement;
+  team_id: number;
+  achievement_id: number;
+  file: string;
 }
 
 @Injectable(
