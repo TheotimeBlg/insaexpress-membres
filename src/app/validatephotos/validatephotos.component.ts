@@ -30,8 +30,6 @@ export class ValidatephotosComponent implements OnInit {
 
   onSubmit() {
 
-
-
   }
   getTeams(): void {
     this.teamsService.getTeams().subscribe((teams) => {
