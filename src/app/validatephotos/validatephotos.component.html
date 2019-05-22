@@ -2,43 +2,34 @@
 <div id="wrapper">
 	<div id="main">
 
+		<div *ngIf="isOrga; else elseBlock">
 		<!-- Post -->
 			<article class="post">
 				<header>
 					<div class="title">
-						<h2><a href="single.html">Valide des défis</a></h2>
-					</div>
-					<div class="meta">
-						<time class="published" datetime="2015-11-01">November 1, 2015</time>
+						<h2><a>Valide des défis</a></h2>
 					</div>
 				</header>
-
-				<section>
-					<img src = "http://localhost:8000/upload/lea.jpg"/>
-					<button class="button large fit">Je valide !</button> <button class="button large fit">Pas bon</button>
-				</section>
-				
 			</article>
 
-			<article class="post">
-				<section>
-				<img src="/assets/images/pic01.jpg" alt="" />
-				</section>
-
-
-				<article class="mini-post" *ngFor="let teamachievement of teamachievements">
+				<article class="post" *ngFor="let teamachievement of teamachievements">
+					<p>Défi : {{teamachievement.achievement.name}}</p>
+					<p>Equipe : {{teamachievement.team_id}}</p>
+					<img src="{{teamachievement.photo.file}}" class="image">
+					<br>
+					<br>
+					<button (ngSubmit)="onSubmit()" class="button large fit">Je valide !</button> <button class="button large fit">Pas bon</button>
+				</article>
+			</div>
+			<ng-template #elseBlock>
+				<article class="post">
 					<header>
-						<img src="../../../../insaexpress-api/upload/lea.jpg" alt="" />
-						<a href="#" class="author"><img src="{{ teamachievement.picture }}" alt="" /></a>
-						<p>{{teamachievement.team_id}}</p>
-						<p>{{teamachievement.picture}}</p>
-
+						<div class="title">
+							<h2><a>Désolé ! Vous n'êtes pas autorisé à valider des défis.</a></h2>
+						</div>
 					</header>
-			</article>
-				
-		</article>
-		
-
+				</article>
+			</ng-template>
 	</div>
 
 	<!-- Sidebar -->
@@ -47,26 +38,27 @@
 		<!-- Intro -->
 		<section id="intro">
 			<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
-			<header>
-				
-			</header>
-		</section>
 
-
-
-	<!-- Mini Posts -->
 		<section>
-			<div class="mini-posts">
+				<h1 style="font-size: 200%;">Classement</h1>
+				<div class = "leaderboard">
+				<div class="mini-post">
+				<article  *ngFor="let team of teams">
+					<header>
+						<h3>{{team.name}}</h3>
+						<p>a déjà parcouru {{team.distance/1000}}km</p>
+						<p>{{team.score}}pts</p>
+						<a href="#" class="author"><img src="{{ team.picture }}" alt="" /></a>
+					</header>
 
-				<!-- Mini Post -->
-					<article class="mini-post">
-						
-					</article>
+				</article>
+				</div>
+				</div>
 
-			</div>
+			</section>
 		</section>
 
-		
+
 
 		<!-- Footer -->
 		<section id="footer">
@@ -83,9 +75,3 @@
 	</section>
 
 </div>
-
-
-
-
-
-

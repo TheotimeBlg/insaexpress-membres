@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TEAMS } from '../data/ma_liste_de_teams';
 import { Achievement, Team, TeamsService } from '../data/team.service';
 import { AchievementsService } from '../data/achievements.service';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-defis',
@@ -18,12 +19,20 @@ export class DefisComponent implements OnInit {
 
 
   constructor(private teamsService: TeamsService,
-              private achievementsService: AchievementsService) { }
+              private achievementsService: AchievementsService, 
+              ) { }
 
   ngOnInit() {
 
   this.getTeams(); 
   this.getAchievements();
+
+/*  this.teamsService.getTeam(this.team).subscribe(
+    (team) => {
+      this.team = team;
+      this.team_achievements = team.team_achievements.reverse();
+    }
+  );*/
 
   }
 
@@ -45,5 +54,7 @@ export class DefisComponent implements OnInit {
       this.achievements = achievements;
     });
   }
+  
+
 
 }

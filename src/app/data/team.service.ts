@@ -24,8 +24,15 @@ export class Team {
 export class TeamAchievement {
   created_at: string;
   achievement: Achievement;
+  achievement_id: number;
   team_id: number;
-  picture: string;
+  photo_id: number;
+  validation: boolean;
+}
+
+export class File {
+  id: number;
+  file: string;
 }
 
 @Injectable(
@@ -54,6 +61,28 @@ export class TeamsService {
 
   getTeam(id: string): Observable<Team> {
     return this.http.get<Team>(environment.INSAExpressApi + '/teams/' + id + '/');
+  }
+
+  getFiles(): Observable<File[]> {
+    return new Observable((obs) => {
+      const refresh = () => this.http.get<File[]>(environment.INSAExpressApi + '/manage/upload/').subscribe((files) => {
+        obs.next(files);
+        if (!obs.closed) {
+          setTimeout(refresh, 30000);
+        } else {
+          obs.complete();
+        }
+      }, (err) => {
+        obs.error(err);
+      });
+
+      refresh.call(this);
+    });
+  }
+
+
+  getFile(id: number): Observable<File> {
+    return this.http.get<File>(environment.INSAExpressApi + '/manage/upload/' + id + '/');
   }
 
 }
