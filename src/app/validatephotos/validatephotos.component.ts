@@ -57,7 +57,6 @@ export class ValidatephotosComponent implements OnInit {
   }
 
 
-
   getTeams(): void {
     this.teamsService.getTeams().subscribe((teams) => {
       teams.sort((a, b) => b.score - a.score);

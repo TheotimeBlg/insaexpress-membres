@@ -28,7 +28,6 @@ export class UploadphotosComponent implements OnInit {
   fichier: File;
   selectedEquipe;
   selectedDefi;
-  url;
   selectedFile;
   maxID = 1;
 
@@ -36,7 +35,6 @@ export class UploadphotosComponent implements OnInit {
               private uploadService: UploadService, 
               private achievementsService: AchievementsService,
               private teamsService: TeamsService,
-              private activatedRoute: ActivatedRoute,
               private router: Router,
               private http: HttpClient) { }
 
@@ -44,10 +42,6 @@ export class UploadphotosComponent implements OnInit {
     this.form = this.formBuilder.group({
         photos: [''], defis: [''], equipe: ['']
       });
-
-/*    this.achievementsService.getTeamAchievement().subscribe((teamachievements) => {
-      this.teamachievements = teamachievements;
-    }); */
 
     this.achievementsService.getAchievements().subscribe((achievements) => {
       this.achievements = achievements;
@@ -62,7 +56,6 @@ export class UploadphotosComponent implements OnInit {
   }
 
   onFileChanged(event) {
-   
 
     this.teamsService.getTeam(this.selectedEquipe).subscribe((team) => {
         this.team = team;
@@ -92,28 +85,7 @@ export class UploadphotosComponent implements OnInit {
 
   }
 
-
-/*  onChange(event) {
-    if (event.target.files.length > 0) {
-      const file = event.target.files[0];
-      this.form.get('photos').setValue(file);
-    }
-
-    this.teamsService.getTeam(this.selectedEquipe).subscribe((team) => {
-        this.team = team;
-    });
-    
-    this.achievementsService.getAchievement(this.selectedDefi).subscribe((achievement) => {
-          this.achievement = achievement;
-    }); 
-
-    this.teamsService.getFile(this.selectedFile).subscribe((achievement) => {
-          this.file = file;
-    }); 
-  } */
-
   onSubmit() {
-
     for(let fichier of this.fichiers) {
       if (fichier.id > this.maxID) {
         this.maxID = fichier.id;
