@@ -14,19 +14,21 @@ export class UploadService {
   DJANGO_SERVER: string = "http://127.0.0.1:8000";
   constructor(private http: HttpClient) { }
 
-/*  public upload(id_achievement, id_team, formData) {
-    return this.http.post<any>(`${this.DJANGO_SERVER}/upload/`, id_achievement, id_team, formData);
-  }*/
+  public upload(achievement, team, formData) {
+    return this.http.post<File>(environment.INSAExpressApi+'/manage/upload/', {'achievement_id': achievement.id,
+      'team_id': team.id});
+  }
 
-  upload(achievement: Achievement, team: Team, formData: FormData): Observable<TeamAchievement> {
-    return this.http.post<TeamAchievement>(environment.INSAExpressApi + '/manage/team_achievements/', {
+/*  public upload(achievement, team, formData) {
+    return this.http.post<File>(environment.INSAExpressApi + `/manage/upload/`, 
+    {
       'achievement_id': achievement.id,
       'team_id': team.id,
-      'validation': false,
-      'photo': formData
+      'file': formData
+    }
 
-    });
-  }
+    );
+  }*/
 
 
 

@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 import { Achievement, Team, TeamsService, TeamAchievement } from './../data/team.service';
 import { AchievementsService } from './../data/achievements.service';
 import { UploadService } from '../upload.service';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-uploadphotos',
@@ -24,14 +26,16 @@ export class UploadphotosComponent implements OnInit {
   teamachievements: TeamAchievement[];
   selectedEquipe;
   selectedDefi;
-  test;
+  url;
+  selectedFile: File;
 
   constructor(private formBuilder: FormBuilder, 
               private uploadService: UploadService, 
               private achievementsService: AchievementsService,
               private teamsService: TeamsService,
               private activatedRoute: ActivatedRoute,
-              private router: Router) { }
+              private router: Router,
+              private http: HttpClient) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -54,6 +58,33 @@ export class UploadphotosComponent implements OnInit {
 
   }
 
+ /* onUpload() {
+
+  // this.http is the injected HttpClient
+  const uploadData = new FormData();
+  uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
+  this.http.post('http://localhost:8000/manage/team_achievements/', this.team.id, uploadData)
+    .subscribe(() => {
+        alert("Parfait");
+      },
+      () => {
+        alert('Impossible d\'affecter la réussite :-(');
+      });
+  }*/
+  onFileChanged(event) {
+    this.selectedFile = event.target.files[0];
+
+
+    this.teamsService.getTeam(this.selectedEquipe).subscribe((team) => {
+        this.team = team;
+    });
+    
+    this.achievementsService.getAchievement(this.selectedDefi).subscribe((achievement) => {
+          this.achievement = achievement;
+    }); 
+
+  }
+
 
   onChange(event) {
     if (event.target.files.length > 0) {
@@ -61,25 +92,21 @@ export class UploadphotosComponent implements OnInit {
       this.form.get('photos').setValue(file);
     }
 
-
     this.teamsService.getTeam(this.selectedEquipe).subscribe((team) => {
         this.team = team;
     });
     
-
-
     this.achievementsService.getAchievement(this.selectedDefi).subscribe((achievement) => {
           this.achievement = achievement;
     }); 
-  }
+  } 
 
   onSubmit() {
     const formData = new FormData(); 
-    formData.append('file', this.form.get('photos').value);
+    formData.append('file', this.selectedFile);
 
-    this.test = formData;
+    this.url = environment.INSAExpressApi+`/manage/upload/`;
 
- 
     this.uploadService.upload(this.achievement, this.team, formData).subscribe(
       () => {
         alert("Parfait");
@@ -90,6 +117,7 @@ export class UploadphotosComponent implements OnInit {
     );
 
   }
+
 }
    
   

@@ -27,6 +27,13 @@ export class DefisComponent implements OnInit {
   this.getTeams(); 
   this.getAchievements();
 
+/*  this.teamsService.getTeam(this.team).subscribe(
+    (team) => {
+      this.team = team;
+      this.team_achievements = team.team_achievements.reverse();
+    }
+  );*/
+
   }
 
 
@@ -47,5 +54,7 @@ export class DefisComponent implements OnInit {
       this.achievements = achievements;
     });
   }
+  
+
 
 }

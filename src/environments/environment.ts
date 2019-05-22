@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  INSAExpressApi: 'http://localhost:8000'
+  INSAExpressApi: 'http://localhost:8000',
+  keycloakRootUrl: 'http://localhost:8080/auth'
 };
 
 /*

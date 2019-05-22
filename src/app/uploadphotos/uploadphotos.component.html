@@ -9,7 +9,7 @@
 	<article class="post">
 		<header>
 			<div class="title">
-				<h2><a href="single.html">Relève des défis</a></h2>
+				<h2><a>Relève des défis</a></h2>
 			</div>
 			<div class="meta">
 				<time class="published" datetime="2015-11-01">November 1, 2015</time>
@@ -18,9 +18,8 @@
 
 		<section>
 			<h3>Selectionne un défi</h3>
-			<p>defi : {{achievementid}} et {{selectedDefi}} et {{achievement.id}}</p>
-			<p>equipe : {{test | json}} et {{file}}</p>
 			
+				<p>test : {{selectedFile}}</p>
 				<div class="row gtr-uniform">
 					<div class="col-12">
 						<select name="defis" id="demo-category" [(ngModel)]="selectedDefi">
@@ -35,7 +34,9 @@
 				</div>
 			<br/>
 		    <br/>
-		    <input type="file" name="photos" (change)="onChange($event)" />
+
+
+		    <input type="file" name="photos" (change)="onFileChanged($event)" />
 		    <br/>
 		    <br/>
 		<form [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -43,7 +44,7 @@
 		    	<button type="submit">Valider</button>
 			</div>
 
-		  </form>
+		 </form>
 		</section>
 		
 	</article>
