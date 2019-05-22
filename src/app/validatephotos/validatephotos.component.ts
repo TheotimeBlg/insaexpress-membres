@@ -2,6 +2,7 @@ import { Directive, Component, OnInit, Input } from '@angular/core';
 import { Achievement, Team, TeamAchievement, TeamsService } from '../data/team.service';
 import { AchievementsService } from '../data/achievements.service';
 import {Http} from '@angular/http';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-validatephotos',
@@ -19,18 +20,41 @@ export class ValidatephotosComponent implements OnInit {
   
 
   constructor(private achievementsService: AchievementsService,
-              private teamsService: TeamsService) { }
+              private teamsService: TeamsService,
+              private router: Router) { }
 
   ngOnInit() {
 
-  this.getTeamAchievement();
+  this.getNotValidAchievement();
   this.getTeams();
 
   }
 
-  onSubmit() {
+  validate(id, achievement) {
+   this.achievementsService.validateAchievement(id, achievement).subscribe(
+      () => {
+        alert("ok");
+      },
+      () => {
+        alert('pas ok');
+      }
+    );
+  }
+
+  delete(id){
+    this.achievementsService.deleteAchievement(id).subscribe(
+      () => {
+        window.location.reload()
+      },
+      () => {
+        this.router.navigate(['validerdefis']);
+      }
+    );
 
   }
+
+
+
   getTeams(): void {
     this.teamsService.getTeams().subscribe((teams) => {
       teams.sort((a, b) => b.score - a.score);
@@ -38,8 +62,8 @@ export class ValidatephotosComponent implements OnInit {
     });
   }
 
-  getTeamAchievement(): void {
-    this.achievementsService.getTeamAchievement().subscribe((teamachievements) => {
+  getNotValidAchievement(): void {
+    this.achievementsService.getNotValidAchievement().subscribe((teamachievements) => {
       this.teamachievements = teamachievements;
     });
   }

@@ -121,7 +121,8 @@ export class UploadphotosComponent implements OnInit {
     } 
     this.uploadService.postAchievement(this.achievement, this.team, this.maxID+1).subscribe(
       () => {
-        alert("C\'est bon ! Ton défi sera peut-être validé, bonne chance !");
+        this.router.navigate(['']);
+        //alert("C\'est bon ! Ton défi sera peut-être validé, bonne chance !");
       },
       () => {
         alert('Impossible d\'affecter la photo :-(');

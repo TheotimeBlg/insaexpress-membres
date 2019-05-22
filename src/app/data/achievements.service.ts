@@ -51,15 +51,32 @@ export class AchievementsService {
     });
   }
 
+  getNotValidAchievement(): Observable<TeamAchievement[]> {
+    return new Observable((obs) => {
+      const refresh = () => this.http.get<TeamAchievement[]>(environment.INSAExpressApi + '/manage/validate/false/').subscribe((teamachievements) => {
+        obs.next(teamachievements);
+        if (!obs.closed) {
+          setTimeout(refresh, 30000);
+        } else {
+          obs.complete();
+        }
+      }, (err) => {
+        obs.error(err);
+      });
 
-
-
-/*
-  validate(): Observable<TeamAchievement> {
-    return this.http.post<Achievement>(environment.INSAExpressApi + '/manage/team_achievements/', {
-      'validate': true;
+      refresh.call(this);
     });
   }
-*/
+
+  validateAchievement(id: number, achievement): Observable<TeamAchievement> {
+    return this.http.put<TeamAchievement>(environment.INSAExpressApi + '/manage/validate/false/' + id + '/', {'validation': true });
+  }
+
+
+
+  deleteAchievement(id: number): Observable<TeamAchievement> {
+    return this.http.delete<TeamAchievement>(environment.INSAExpressApi + '/manage/validate/false/' + id + '/');
+  }
+
 
 }

@@ -17,8 +17,14 @@
 					<img src="{{teamachievement.photo.file}}" class="image">
 					<br>
 					<br>
-					<button (ngSubmit)="onSubmit()" class="button large fit">Je valide !</button> <button class="button large fit">Pas bon</button>
+					<form>
+					<button class="button large fit" (click)="validate(teamachievement.id, teamachievement.achievement)">Je valide !</button>
+					</form>
+					<form >
+					<button class="button large fit" (click)="delete(teamachievement.id)">Pas bon</button>
+					</form>
 				</article>
+
 
 	</div>
 
