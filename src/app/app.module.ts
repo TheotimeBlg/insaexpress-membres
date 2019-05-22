@@ -9,17 +9,17 @@ import { AppComponent } from './app.component';
 import { NewComponent } from './new/new.component';
 import { UploadphotosComponent } from './uploadphotos/uploadphotos.component';
 
-
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbCardModule, NbListModule } from '@nebular/theme';
-
-
 
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import { DefisComponent } from './defis/defis.component';
 import { ValidatephotosComponent } from './validatephotos/validatephotos.component';
+
+import { KeycloakHttp, keycloakHttpFactory } from './keycloak/keycloak.http';
+import { KeycloakService } from './keycloak/keycloak.service';
+import {HttpModule, RequestOptions, XHRBackend} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -43,8 +43,15 @@ import { ValidatephotosComponent } from './validatephotos/validatephotos.compone
     NbCardModule,
     NbListModule
   ],
-  providers: [HttpClientModule],
+  providers: [
+    HttpClientModule,
+    {
+      provide: KeycloakHttp,
+      useFactory: keycloakHttpFactory,
+      deps: [XHRBackend, RequestOptions, KeycloakService]
+    },
+    KeycloakService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
