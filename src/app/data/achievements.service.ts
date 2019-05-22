@@ -29,6 +29,10 @@ export class AchievementsService {
     });
   }
 
+  getAchievement(id: string): Observable<Achievement> {
+    return this.http.get<Achievement>(environment.INSAExpressApi + '/manage/achievements/' + id + '/');
+  }
+
 
   getTeamAchievement(): Observable<TeamAchievement[]> {
     return new Observable((obs) => {
@@ -47,11 +51,15 @@ export class AchievementsService {
     });
   }
 
-  createAchivement(achievement: Achievement): Observable<Achievement> {
-    return this.http.post<Achievement>(environment.INSAExpressApi + '/manage/achievements/', {
-      'name': achievement.name,
-      'points': achievement.points
+
+
+
+/*
+  validate(): Observable<TeamAchievement> {
+    return this.http.post<Achievement>(environment.INSAExpressApi + '/manage/team_achievements/', {
+      'validate': true;
     });
   }
+*/
 
 }
