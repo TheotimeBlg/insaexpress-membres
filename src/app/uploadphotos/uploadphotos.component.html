@@ -18,14 +18,14 @@
 
 		<section>
 			<h3>Selectionne un défi</h3>
-			
-				<p>test : {{selectedFile}}</p>
 				<div class="row gtr-uniform">
 					<div class="col-12">
 						<select name="defis" id="demo-category" [(ngModel)]="selectedDefi">
 							<option value="">- Afficher les défis -</option>
 							<option *ngFor="let defi of achievements"  value="{{defi.id}}">{{defi.name}}</option>
 						</select>
+			<br>
+			<h3>Selectionne ton équipe</h3>
 						<select name="equipe" id="demo-category" [(ngModel)]="selectedEquipe" >
 							<option value="">- Choisis ton équipe -</option>
 							<option *ngFor="let equipe of teams" value="{{equipe.id}}">{{equipe.name}}</option>
