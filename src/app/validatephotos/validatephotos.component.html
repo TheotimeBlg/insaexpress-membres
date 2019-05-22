@@ -15,7 +15,7 @@
 				<article class="post" *ngFor="let teamachievement of teamachievements">
 					<p>Défi : {{teamachievement.achievement.name}}</p>
 					<p>Equipe : {{teamachievement.team_id}}</p>
-					<img src="{{teamachievement.photo}}" class="image">
+					<img src="{{teamachievement.photo.file}}" class="image">
 					<br>
 					<br>
 					<button (ngSubmit)="onSubmit()" class="button large fit">Je valide !</button> <button class="button large fit">Pas bon</button>
