@@ -2,6 +2,7 @@
 <div id="wrapper">
 	<div id="main">
 
+		<div *ngIf="isOrga; else elseBlock">
 		<!-- Post -->
 			<article class="post">
 				<header>
@@ -25,9 +26,16 @@
 					</form>
 				</article>
 
-				
-
-
+			</div>
+			<ng-template #elseBlock>
+				<article class="post">
+					<header>
+						<div class="title">
+							<h2><a>Désolé ! Vous n'êtes pas autorisé à valider des défis.</a></h2>
+						</div>
+					</header>
+				</article>
+			</ng-template>
 	</div>
 
 	<!-- Sidebar -->
@@ -48,15 +56,15 @@
 						<p>{{team.score}}pts</p>
 						<a href="#" class="author"><img src="{{ team.picture }}" alt="" /></a>
 					</header>
-					
+
 				</article>
-				</div>  
 				</div>
-						
+				</div>
+
 			</section>
 		</section>
 
-		
+
 
 		<!-- Footer -->
 		<section id="footer">
@@ -73,9 +81,3 @@
 	</section>
 
 </div>
-
-
-
-
-
-

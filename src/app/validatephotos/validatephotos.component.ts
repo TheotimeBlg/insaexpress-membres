@@ -3,6 +3,7 @@ import { Achievement, Team, TeamAchievement, TeamsService } from '../data/team.s
 import { AchievementsService } from '../data/achievements.service';
 import {Http} from '@angular/http';
 import {ActivatedRoute, Router} from '@angular/router';
+import { KeycloakService } from '../keycloak/keycloak.service';
 
 @Component({
   selector: 'app-validatephotos',
@@ -10,14 +11,12 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./../../assets/css/main.css', './validatephotos.component.css']
 })
 
-
 export class ValidatephotosComponent implements OnInit {
 
   files: File[];
   teams: Team[];
   teamachievements: TeamAchievement[];
-  
-  
+  isOrga: boolean = false;
 
   constructor(private achievementsService: AchievementsService,
               private teamsService: TeamsService,
@@ -27,6 +26,10 @@ export class ValidatephotosComponent implements OnInit {
 
   this.getNotValidAchievement();
   this.getTeams();
+
+
+    this.isOrga = KeycloakService.auth.authz.realmAccess.roles.indexOf("Orga") > -1;
+
 
   }
 
@@ -72,5 +75,5 @@ export class ValidatephotosComponent implements OnInit {
 
 
 
- 
+
 }

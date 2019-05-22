@@ -29,8 +29,8 @@ import {HttpModule, RequestOptions, XHRBackend} from "@angular/http";
     NewComponent,
     UploadphotosComponent,
     DefisComponent,
-    ValidatephotosComponent
-  ],
+    ValidatephotosComponent,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
