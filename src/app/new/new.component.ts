@@ -42,10 +42,6 @@ export class NewComponent implements OnInit {
   });
   L.marker([50.6311634, 3.0599573], {icon: myIcon}).bindPopup('Je suis un Frugal Marqueur').addTo(mymap).openPopup();
 
-
-
-
-
   }
 
   onSelect(team: Team): void{
@@ -91,9 +87,5 @@ export class NewComponent implements OnInit {
       console.log(minLat, minLng, maxLat, maxLng, this.bounds);
       this.teams = teams;
     });
-  }
-
-  logout(): void{
-    KeycloakService.logout();
   }
 }

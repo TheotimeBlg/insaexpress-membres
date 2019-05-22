@@ -10,16 +10,25 @@
 			<li><a routerLink="ajoutdefis">Soumettre un défi</a></li>
 		</ul>
 	</nav>
+
+	<nav class="logout">
+		<ul>
+			<li>
+				<a class="button" (click)="logout()">Déconnexion </a>
+			</li>
+		</ul>
+	</nav>
+
+<!--
 	<nav class="main">
 		<ul>
 			<li class="menu">
 				<a class="fa-bars" href="#menu">Menu</a>
 			</li>
 		</ul>
-	</nav>
+	</nav>-->
 </header>
 
 
+
 <router-outlet></router-outlet>
-
-

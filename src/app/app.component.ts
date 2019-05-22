@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { KeycloakService } from './keycloak/keycloak.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'INSA EXPRESS 3.0';
+  logout(): void{
+    KeycloakService.logout();
+  }
 }

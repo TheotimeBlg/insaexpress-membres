@@ -55,6 +55,10 @@ export class KeycloakService {
     })
   }
 
+  static getRoles(): Array<string>{
+    return KeycloakService.auth.authz.realmAccess;
+  }
+
   static getUsername(): string {
     return KeycloakService.auth.authz.tokenParsed.preferred_username;
   }
