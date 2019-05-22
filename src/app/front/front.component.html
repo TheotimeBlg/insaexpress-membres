@@ -68,15 +68,18 @@ Enfin, l’onglet “Se Connecter”
 
 </p>
 <h3>L'identification</h3><p style="text-indent: 30px;">
-	Par soucis d'ergonomie, nous avons décidé de séparer complètement l'interface publique et l'interface des membres de la course, participants comme organisateur. Pour gérer l'authentification des ces profils, nous avons décidé d'utiliser un service d'identification externe open source : Keycloak.
+	Par soucis d'ergonomie, nous avons décidé de <b>séparer complètement l'interface publique et l'interface des membres de la course</b>, participants comme organisateur. Pour gérer l'authentification des ces profils, nous avons décidé d'utiliser un service d'identification externe open source : <a class="btn btn-primary" href="https://www.keycloak.org/" target="_blank">Keycloak</a>.
 	Développé par le MIT, ce service de gestion des accès très sécurisé est un véritable plus pour notre projet. Il nous offre une interface d'administration des utilisateurs performante, ainsi qu'une grande souplesse dans la gestion des différents accès.
 	<br>
 	Ce service "out of the box" tourne sur un serveur dédié. Notre serveur "membres" capture toute connection non-identifiée et redirige la requête vers la page de connexion de Keycloak.
-	Ici, l'utilisateur peut se connecter à l'aide d'un mot de passe temporaire et directement le changer, ce qui lui donne accès au site "membres".
-	Cet outil nous permet aussi de gérer les accès au sein d'une page. Ainsi, les utilisateurs déclarés comme "Organisateurs" sont les seuls à avoir la possibilité de valider des défis et d'attribuer des points via l'onglet "Valider des défis".
+	Ici, l'utilisateur peut se connecter à l'aide d'un mot de passe temporaire et directement le changer, puis accéder au site "membres".
+	Cet outil nous permet aussi de <b>gérer les accès au sein d'une page.</b> Ainsi, les utilisateurs déclarés comme "Organisateurs" sont les seuls à avoir la possibilité de valider des défis et d'attribuer des points via l'onglet "Valider des défis".
+	Keycloak est immense, et nous n'avons fait qu'effleurer les possibilités qu'il nous propose. En réalité, notre volonter d'implémenter ce service dans le site d'INSA EXPRESS a été motivé par la mise en place d'une <b>identification centralisée inter-associations</b> sur le campus de l'INSA LYON.
+	Bien que le projet ne soit pas assez mûr pour intégrer tout de suite notre site, nous savons qu'il est prêt à basculer tout de suite de son identification propre à celle de la <span style="color: #CC3333;"><a class="btn btn-primary" href="https://portail.asso-insa-lyon.fr/association/botinsa/" target="_blank">Vie Associative</a></span>.
+	Si ce service d'authentification centralisée se révèle être efficace, nous souhaitons le partager avec les autres écoles du Groupe INSA. Pour cela, INSA EXPRESS sera la vitrine parfaite et l'initiateur, nous l'espérons, d'une uniformisation des services informatiques étudiants dans le Groupe INSA.
 	<br>
-	L'implémentation de ce service d'identification nous a pris du temps, car étant une feature très complète, elle avait un grand coup d'entrée. De plus, la documentation de keycloak reste très légère et le service et relativement nouveau, ce qui a durci la tâche.
-	Magré cela, nous sommes content du résultat et nous pensons surtoût que Keycloak est plus sécurisé qu'un service d'authentification "fait main" ou même que OAuth.
+	L'implémentation de ce service d'identification nous a pris du temps, car étant une feature très complète, elle avait un grand coup d'entrée. De plus, la documentation de keycloak reste légère et le service et relativement nouveau, ce qui a durci la tâche.
+	Magré cela, nous sommes content du résultat et nous pensons surtoût que Keycloak est <b>plus sécurisé</b> qu'un service d'authentification "fait main" ou même que OAuth.
 
 </p>
 
