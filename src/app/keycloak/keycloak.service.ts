@@ -10,7 +10,7 @@ export class KeycloakService {
   static init(): Promise<any> {
     const keycloakAuth: any = Keycloak({
       url: environment.keycloakRootUrl,
-      realm: 'demo',
+      realm: 'insaexpress',
       clientId: '1',
       'ssl-required': 'external',
       'public-client': true
