@@ -34,15 +34,12 @@ import {HttpModule, RequestOptions, XHRBackend} from "@angular/http";
     UploadphotosComponent,
     DefisComponent,
     ValidatephotosComponent,
-<<<<<<< HEAD
     TeamPositionComponent,
     RapportComponent,
     BackComponent,
     FrontComponent
   ],
-=======
-    ],
->>>>>>> 59be1c455c3b290f5d777cca7d0200e9511c5944
+
   imports: [
     BrowserModule,
     AppRoutingModule,
