@@ -16,14 +16,27 @@
 							<li><a href="ajoutdefis">Soumettre un défi</a></li>
 						</ul>
 					</nav>
-					<nav class="main">
+
+					<nav class="logout">
 						<ul>
-							<li class="menu">
-								<a class="fa-bars" href="#menu">Menu</a>
+							<li>
+								<a class="button" (click)="logout()">Déconnexion </a>
 							</li>
 						</ul>
 					</nav>
+
+<!--
+					<nav class="main">
+						<ul>
+
+							<li class="menu">
+								<a class="fa-bars" href="#menu">Menu</a>
+							</li>
+
+						</ul>
+					</nav>-->
 				</header>
+
 
 			<!-- Menu -->
 					<section id="menu">
@@ -35,7 +48,7 @@
 								</form>
 							</section>
 
-						
+
 
 						<!-- Actions -->
 							<section>
@@ -61,13 +74,13 @@
 							</header>
 							<!-- Déclaration du conteneur de la carte avec l'id "frugalmap" -->
 							<div id="mapfrance"></div>
-							
+
 							<p></p>
-							
+
 						</article>
 
-						
-					
+
+
 
 				</div>
 
@@ -78,14 +91,14 @@
 						<section id="intro">
 							<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
 							<header>
-								
+
 							</header>
 						</section>
 
 						<section>
 							<h1 center>Classement</h1>
 							<div class = "leaderboard">
-							
+
 							<article class="mini-post" *ngFor="let team of teams">
 								<header>
 									<h3>{{team.name}}</h3>
@@ -93,21 +106,21 @@
 									<p>{{team.score}}pts</p>
 									<a href="#" class="author"><img src="{{ team.picture }}" alt="" /></a>
 								</header>
-								
+
 							</article>
-							</div>  
-									
+							</div>
+
 						</section>
 
 
-					
-										
+
+
 						<section>
 
 						<!-- Mini Post -->
 							<article class="post">
 								<h1 center>Classement</h1>
-							
+
 							      	<div class = "leaderboard">
 							      			<div *ngFor="let team of teams">
 							      				<img src="{{ team.picture }}" alt="" />
@@ -117,13 +130,13 @@
 							      				<br>{{team.longitude}}pts<br>
 
 											</div>
-									</div>	
-							         
-							</article>   
-									
+									</div>
+
+							</article>
+
 						</section>
 
-					
+
 
 					<!-- Footer -->
 						<section id="footer">
@@ -147,8 +160,6 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 
-	
+
 
 </body>
-
-

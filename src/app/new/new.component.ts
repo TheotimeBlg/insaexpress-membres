@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TEAMS } from '../data/ma_liste_de_teams';
 import { Team, TeamsService } from '../data/team.service';
 import * as L from 'leaflet';
+import { KeycloakService } from '../keycloak/keycloak.service';
 
 
 @Component({
@@ -26,7 +27,7 @@ export class NewComponent implements OnInit {
   constructor(private teamsService: TeamsService) { }
 
   ngOnInit() {
-    
+
     this.getTeams();
 
     // Déclaration de la carte avec les coordonnées du centre et le niveau de zoom.
@@ -40,7 +41,7 @@ export class NewComponent implements OnInit {
     iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.2.0/images/marker-icon.png'
   });
   L.marker([50.6311634, 3.0599573], {icon: myIcon}).bindPopup('Je suis un Frugal Marqueur').addTo(mymap).openPopup();
- 
+
 
 
 
@@ -90,5 +91,9 @@ export class NewComponent implements OnInit {
       console.log(minLat, minLng, maxLat, maxLng, this.bounds);
       this.teams = teams;
     });
+  }
+
+  logout(): void{
+    KeycloakService.logout();
   }
 }
