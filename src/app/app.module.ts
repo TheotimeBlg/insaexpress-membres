@@ -20,6 +20,10 @@ import { NbThemeModule, NbLayoutModule, NbCardModule, NbListModule } from '@nebu
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import { DefisComponent } from './defis/defis.component';
 import { ValidatephotosComponent } from './validatephotos/validatephotos.component';
+import { TeamPositionComponent } from './team-position/team-position.component';
+import { RapportComponent } from './rapport/rapport.component';
+import { BackComponent } from './back/back.component';
+import { FrontComponent } from './front/front.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { ValidatephotosComponent } from './validatephotos/validatephotos.compone
     NewComponent,
     UploadphotosComponent,
     DefisComponent,
-    ValidatephotosComponent
+    ValidatephotosComponent,
+    TeamPositionComponent,
+    RapportComponent,
+    BackComponent,
+    FrontComponent
   ],
   imports: [
     BrowserModule,
