@@ -18,6 +18,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {LeafletModule} from '@asymmetrik/ngx-leaflet';
 import { DefisComponent } from './defis/defis.component';
 import { ValidatephotosComponent } from './validatephotos/validatephotos.component';
+import { TeamPositionComponent } from './team-position/team-position.component';
+import { RapportComponent } from './rapport/rapport.component';
+import { BackComponent } from './back/back.component';
+import { FrontComponent } from './front/front.component';
 
 import { KeycloakHttp, keycloakHttpFactory } from './keycloak/keycloak.http';
 import { KeycloakService } from './keycloak/keycloak.service';
@@ -30,7 +34,15 @@ import {HttpModule, RequestOptions, XHRBackend} from "@angular/http";
     UploadphotosComponent,
     DefisComponent,
     ValidatephotosComponent,
+<<<<<<< HEAD
+    TeamPositionComponent,
+    RapportComponent,
+    BackComponent,
+    FrontComponent
+  ],
+=======
     ],
+>>>>>>> 59be1c455c3b290f5d777cca7d0200e9511c5944
   imports: [
     BrowserModule,
     AppRoutingModule,
