@@ -30,10 +30,10 @@ export class ValidatephotosComponent implements OnInit {
 
   }
 
-  validate(id, achievement) {
-   this.achievementsService.validateAchievement(id, achievement).subscribe(
+  validate(id, achievementid, teamid, photoid) {
+   this.achievementsService.validateAchievement(id, achievementid, teamid, photoid).subscribe(
       () => {
-        alert("ok");
+        window.location.reload()
       },
       () => {
         alert('pas ok');
@@ -47,7 +47,7 @@ export class ValidatephotosComponent implements OnInit {
         window.location.reload()
       },
       () => {
-        this.router.navigate(['validerdefis']);
+        alert('pas ok');
       }
     );
 

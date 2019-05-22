@@ -68,8 +68,8 @@ export class AchievementsService {
     });
   }
 
-  validateAchievement(id: number, achievement): Observable<TeamAchievement> {
-    return this.http.put<TeamAchievement>(environment.INSAExpressApi + '/manage/validate/false/' + id + '/', {'validation': true });
+  validateAchievement(id: number, achievementid: number, teamid, photoid): Observable<TeamAchievement> {
+    return this.http.put<TeamAchievement>(environment.INSAExpressApi + '/manage/validate/false/' + id + '/', {'validation': true, 'achievement_id': achievementid, 'photo_id': photoid, 'team_id': teamid });
   }
 
 
