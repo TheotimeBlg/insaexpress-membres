@@ -1,117 +1,81 @@
-<body class="is-preload">
 
-	<!-- Wrapper -->
-		<div id="wrapper">
+<div id="wrapper">
+		<div id="main">
 
-			<!-- Menu -->
-					<section id="menu">
+			<!-- Post -->
+			<article class="post">
+				<header>
+    				<div class="title">
+     				 <h2><a>
+							Rapport
+						</a></h2>
+     				 <h6>FILLANCQ Lucas, JUSKIEWENSKI Léa, BALAGUER Théotime, CONFORTO Déborah</h6>
+					</div>
+				</header>
 
-						<!-- Search -->
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
-							</section>
+				<div class="menu1"> <!-- début de la boite contenant les onglets -->
+				  <a class="onglet" routerLink="../rapport"> INTRODUCTION </a> <!-- onglet ACTIF -->
+				  <span class="onglet-actif"> BACK </span> <!-- onglet inactif -->
+				  <a class="onglet" routerLink="../front"> FRONT </a> <!-- onglet inactif -->
+				</div>
 
 
+				<br><p style="text-indent: 30px;">Tout d'abord, il a été nécessaire de passer par une étape de lecture et de compréhension de la base de donnée créée pour le site précédent afin de pouvoir se lancer dans la construction du front avec de bonnes bases. Voilà ce qui en est ressorti :<br><br><img src="assets/images/DB.jpg" height="70%" width="70%" alt="" /><br><br>Nous avons donc également précisé à quoi allait servir chacune de ces tables.
+				<br>
+				<br>
+				La table <b><span style="color: #CC3333;">Team</span></b> permet d’associer à chaque ID d’équipe un nom, une photo, une position, une distance parcourue, un score et l’état dans lequel elle se trouve (disqualifiée, cachée). Des méthodes ont également été ajoutées au code de l’API permettant d’actualiser le score des équipes. <br>
+				Ensuite, la table Participant associe le nom d’un participant à l’ID de son équipe et à son numéro de téléphone.<br>
+				<br>
+				La table <b><span style="color: #CC3333;">Position</span></b> associe une balise à une équipe, à la vitesse de déplacement de la balise et à sa date  de création.<br>
+				La table <b><span style="color: #CC3333;">Balise</span></b> permet d’associer à chaque Balise un numéro de série, son état de validité ainsi que l’équipe qui la porte. <br>
+				<br>
+				La table <b><span style="color: #CC3333;">Achievement</span></b> associe à un nom de Défi, le nombre de points attribués à l’équipe qui le relève, l’utilisateur orga qui l’a créé, sa date de création et les équipes qui ont relevé ce défi.<br>
+				<br>
+				Enfin, la table <b><span style="color: #CC3333;">TeamAchievement</span></b> permet l’association d’une équipe au défi qu’elle a relevé ainsi qu’à l’image qui le prouve.<br>
+				Il y a également une utilisation de signaux pour créer des instances de nos tables définies précédemment en particulier une qui met à jour la position et la distance parcourue par une balise (soit la position et la distance parcourue par l’équipe à laquelle elle appartient) à l’aide de (insaexpress-gps). Il y en a aussi trois autres qui permettent de mettre à jour ou supprimer le score d’une équipe dans la table Achievement ou TeamAchievement.<br>
+				<br>
+				Nous avons effectué une modification dans notre base de donnée : nous avons ajouté une table <b><span style="color: #CC3333;">File</span></b> qui prend un champ FileField qui doit contenir le fichier picture -plus précisement le lien vers ce fichier. On a alors ajouté comme clé étrangère dans la table TeamAchievement, l'objet File contenant la photo associé au défi. L’utilité de cette table sera précisée dans la partie FRONT)Soumission/Validation des défis).<img src="assets/images/DB_modif.jpg" height="70%" width="70%" alt="" /><br>
 
-						<!-- Actions -->
-							<section>
-								<ul class="actions stacked">
-									<li><a href="#" class="button large fit">Log In</a></li>
-								</ul>
-							</section>
+				</p>
 
-					</section>
-
-			<!-- Main -->
-				<div id="main">
-
-					<!-- Post -->
-						<article class="post">
-							<header>
-                <div class="title">
-                  <h2><a>
-										Rapport
-									</a></h2>
-                  <h6>FILLANCQ Lucas, JUSKIEWIENSKI Léa, BALAGUER Théotime, CONFORTO Déborah</h6>
-								</div>
-								<div class="meta">
-									<time class="published" datetime="2015-11-01">November 1, 2015</time>
-								</div>
-							</header>
-							<body>
-
-							<div class="menu1"> <!-- début de la boite contenant les onglets -->
-							  <a class="onglet" routerLink="../rapport"> INTRODUCTION </a> <!-- onglet ACTIF -->
-							  <span class="onglet-actif"> BACK </span> <!-- onglet inactif -->
-							  <a class="onglet" routerLink="../front"> FRONT </a> <!-- onglet inactif -->
-							</div>
-
-							</body>
-
-							<br><p style="text-indent: 30px;">Tout d'abord, il a été nécessaire de passer par une étape de lecture et de compréhension de la base de donnée créée pour le site précédent afin de pouvoir se lancer dans la construction du front avec de bonnes bases. Voilà ce qui en est ressorti :<br><br><img src="assets/images/DB.jpg" height="70%" width="70%" alt="" /><br><br>Nous avons donc également précisé à quoi allait servir chacune de ces tables.
-La table Team permet d’associer à chaque ID d’équipe un nom, une photo, une position, une distance parcourue, un score et l’état dans lequel elle se trouve (disqualifiée, cachée). Des méthodes ont également été ajoutées au code de l’API permettant d’actualiser le score des équipes. <br>
-Ensuite, la table Participant associe le nom d’un participant à l’ID de son équipe et à son numéro de téléphone.<br>
-La table Position associe une balise à une équipe (par son nom), à la vitesse de déplacement de la balise et à sa date  de création.<br>
-La table Balise permet d’associer à chaque Balise utilisée un numéro de série, son état de validité ainsi que l’équipe qui la porte. <br>
-La table Achievement associe à un nom de Défi, un nombre de points attribués à l’équipe qui le relèverait, l’utilisateur orga qui l’a créé, sa date de création et les équipes qui ont relevé ce défi.<br>
-Enfin, la table TeamAchievement permet l’association d’une équipe à un défi qu’elle a relevé ainsi qu’à l’image qui le prouve.<br>
-Il y a également une utilisation de signaux pour créer des instances de nos tables définies précédemment en particulier une qui met à jour la position et la distance parcourue par une balise (soit la position et la distance parcourue par l’équipe à laquelle elle appartient) à l’aide de (insaexpress-gps). Il y en a aussi trois autres qui permettent de mettre à jour ou supprimer le score d’une équipe dans la table Achievement ou TeamAchievement.<br>
-Nous avons effectué une modification dans notre base de donnée : nous avons ajouté une table File qui prend un champ file qui doit contenir le fichier picture et donc on a modifié le champ picture dans la table TeamAchievement puisqu’on la redéfinit comme une clé étrangère provenant  du champ file de la Table File. L’utilité de cette table sera précisée dans la partie FRONT)Soumission/Validation des défis).<br>De plus, on a ajouté un champ “id” à la table Achievement.<br><img src="assets/images/DB_modif.jpg" height="70%" width="70%" alt="" /><br>
-
-</p>
-
-						</article>
+			</article>
 
 
 
 
 				</div>
 
-			<!-- Sidebar -->
-				<section id="sidebar">
+<!-- Sidebar -->
+	<section id="sidebar">
 
-					<!-- Intro -->
-						<section id="intro">
-							<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
-							<header>
+		<!-- Intro -->
+			<section id="intro">
+				<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
+				<header>
 
-							</header>
-						</section>
-
-
+				</header>
+			</section>
 
 
 
 
-									<!--	<app-team-detai [team]="selectedTeam"></app-team-detai>-->
+
+		<!-- Footer -->
+			<section id="footer">
+				<ul class="icons">
+					<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
+					<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+			</section>
+
+	</section>
+</div>
 
 
 
 
-					<!-- Footer -->
-						<section id="footer">
-							<ul class="icons">
-								<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-								<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-							<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-						</section>
 
-				</section>
-
-		</div>
-
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
-
-
-</body>

@@ -34,7 +34,8 @@
 				<div class="mini-post">
 				<article  *ngFor="let team of teams">
 					<header>
-						<h3>{{team.name}}</h3>
+
+						<h3><a routerLink="/team/{{team.id}}">{{team.name}}</a></h3>
 						<p>a déjà parcouru {{team.distance/1000}}km</p>
 						<p>{{team.score}}pts</p>
 						<a href="#" class="author"><img src="{{ team.picture }}" alt="" /></a>

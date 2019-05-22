@@ -1,113 +1,75 @@
-<body class="is-preload">
 
-	<!-- Wrapper -->
-		<div id="wrapper">
+<div id="wrapper">
 
-			<!-- Menu -->
-					<section id="menu">
+	<div id="main">
 
-						<!-- Search -->
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
-							</section>
+		<!-- Post -->
+	<article class="post">
+		<header>
+			<div class="title">
+      			<h2><a>
+				Rapport
+				</a></h2>
+      			<h6>FILLANCQ Lucas, JUSKIEWENSKI Léa, BALAGUER Théotime, CONFORTO Déborah</h6>
+			</div>
+		</header>
 
-
-
-						<!-- Actions -->
-							<section>
-								<ul class="actions stacked">
-									<li><a href="#" class="button large fit">Log In</a></li>
-								</ul>
-							</section>
-
-					</section>
-
-			<!-- Main -->
-				<div id="main">
-
-					<!-- Post -->
-						<article class="post">
-							<header>
-                <div class="title">
-                  <h2><a>
-										Rapport
-									</a></h2>
-                  <h6>FILLANCQ Lucas, JUSKIEWIENSKI Léa, BALAGUER Théotime, CONFORTO Déborah</h6>
-								</div>
-								<div class="meta">
-									<time class="published" datetime="2015-11-01">November 1, 2015</time>
-								</div>
-							</header>
-							<body>
-
-							<div class="menu1"> <!-- début de la boite contenant les onglets -->
-							  <span class="onglet-actif"> INTRODUCTION </span> <!-- onglet ACTIF -->
-							  <a class="onglet" routerLink="../back"> BACK </a> <!-- onglet inactif -->
-							  <a class="onglet" routerLink="../front"> FRONT </a> <!-- onglet inactif -->
-							</div>
-
-							</body>
-
-							<br><p style="text-indent: 30px;">INSA EXPRESS est un événement organisé par l’Association des Elèves des INSAs (AEI). Totalement organisé et géré par des étudiants, l’INSA EXPRESS consiste en un tour de France des INSAs en stop, en binôme. Une vingtaine de binômes partent donc d’une école et essaient de rejoindre l’INSA suivante avant le repas du soir, où une rencontre avec les étudiants de chaque INSA est organisée. Durant cette course, plusieurs défis sont proposés aux binômes, leurs permettant de gagner des points, le but étant d’avoir le plus de points possibles à l’arrivée. Une photo servira de preuve que le défi a bien été réalisé et ce dernier sera ainsi validé ou non par les organisateurs. Un site existant permettait déjà de suivre la course sur Internet: <a class="btn btn-primary" href="https://www.insaexpress.racing/" target="_blank">https://www.insaexpress.racing/</a>.  Nous voulions initialement partir de ce site en adaptant ses fonctionnalités à nos objectifs et en lui en ajoutant de nouvelles. Pour assurer la continuité entre les deux projets, nous avons donc décidé d'utiliser Angular pour le front, et Django pour le back. Malheureusement, le front initial était AngularJS, une version antérieur et qui serait bientôt obsolète. Après plusieurs jours de réflexion, d'essais pour l'adaptation du site et la considération de la migration de notre code en Angular, nous avons pris la décision de recommencer le front en partant de zéro, en gardant le back initial.<br>Pour parvenir à nos fins, nous avons mis en place deux interfaces :<br>
-- une interface dite "membre" pour les organisateurs et les participants, nécessiterait une connexion;<br>
-- une interface publique qui serait la page d’accueil du site et ne nécessiterait pas de connexion pour suivre le déroulement de la course.<br>
-L’interface membre aura deux fonctionnalité selon l'utilisateur connecté :<br>
-- une fonctionnalité organisateur qui donne accès aux photos des défis envoyées par les participants et permet leur validation et l'attribution des points à l’équipe concernée. Si la photo est appropriée, elle peuvent donc être publiées. Ensuite, il est possible pour les organisateurs d’ajouter des défis ou de changer les points attribués en fonction du défi.<br>
-- une fonctionnalité participant permet quant à elle aux participants d’insérer des photos sur le site pour les soumettre à la validation dans l'onglet "Soumettre un Défi". <br>
-Et, l’interface public est en fait la page d’accueil du site donnant accès au classement et à la carte localisant les binômes auxquels nous avons ajouter la possibilité de voir les photos des défis relevés publiées par les organisateurs dans l'onglet "Défis". Nous avons également permis un accès aux profils des équipes (description et photos de profil) dans l'onglet "Equipe".<br>
-<br>Après cette explication générale de nos objectifs, nous allons maintenant vous exposer un peu plus en détails la conception de notre site web (<I>passez aux onglets suivants pour le découvrir</I>).
-</p>
-
-						</article>
-
-
-
-
-				</div>
-
-			<!-- Sidebar -->
-				<section id="sidebar">
-
-					<!-- Intro -->
-						<section id="intro">
-							<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
-							<header>
-
-							</header>
-						</section>
-
-
-
-
-									<!--	<app-team-detai [team]="selectedTeam"></app-team-detai>-->
-
-
-
-
-					<!-- Footer -->
-						<section id="footer">
-							<ul class="icons">
-								<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-								<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-							<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-						</section>
-
-				</section>
-
+		<div class="menu1"> <!-- début de la boite contenant les onglets -->
+		  <span class="onglet-actif"> INTRODUCTION </span> <!-- onglet ACTIF -->
+		  <a class="onglet" routerLink="../back"> BACK </a> <!-- onglet inactif -->
+		  <a class="onglet" routerLink="../front"> FRONT </a> <!-- onglet inactif -->
 		</div>
 
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+
+		<br><p style="text-indent: 30px;"><b><span style="color: #CC3333;">INSA EXPRESS</span></b> est un événement organisé par l’Association des Elèves des INSAs (AEI). Totalement organisé et géré par des étudiants, l’INSA EXPRESS consiste en un tour de France des INSAs en stop, en binôme. Une vingtaine de binômes partent donc d’une école et essaient de rejoindre l’INSA suivante avant le repas du soir, où une rencontre avec les étudiants de chaque INSA est organisée. Durant cette course, plusieurs défis sont proposés aux binômes, leurs permettant de gagner des points, le but étant d’avoir le plus de points possibles à l’arrivée. Une photo servira de preuve que le défi a bien été réalisé et ce dernier sera ainsi validé ou non par les organisateurs. Un site existant permettait déjà de suivre la course sur Internet: <a class="btn btn-primary" href="https://www.insaexpress.racing/" target="_blank">https://www.insaexpress.racing/</a>.  Nous voulions initialement partir de ce site en adaptant ses fonctionnalités à nos objectifs et en lui en ajoutant de nouvelles. <b>Pour assurer la continuité entre les deux projets, nous avons donc décidé d'utiliser Angular pour le front, et Django pour le back.</b> Malheureusement, le front initial était AngularJS, une version antérieure et qui serait bientôt obsolète. Après plusieurs jours de réflexion, d'essais pour l'adaptation du site et la considération de la migration de notre code en Angular, nous avons pris la décision de recommencer le front en partant de zéro, en gardant le back initial.<br>Pour parvenir à nos fins, nous avons mis en place deux interfaces :<br>
+		<br>
+		- une <b>interface dite "membres"</b> pour les organisateurs et les participants, nécessitant une connexion.<br>
+		<br>
+		- une <b>interface publique</b> qui serait la page d’accueil du site et ne nécessiterait pas de connexion pour suivre le déroulement de la course.<br>
+		<br>
+		<br>
+		L’interface membre aura deux fonctionnalité selon l'utilisateur connecté :<br>
+		- une <b>fonctionnalité organisateur</b> qui donne accès aux photos des défis envoyées par les participants via l'onglet <b>"Valider des défis"</b>. Il permet leur validation et l'attribution des points à l’équipe concernée. Si la photo est appropriée, elle peut être publiée. Ensuite, il est possible pour les organisateurs d’ajouter des défis ou de changer les points attribués en fonction du défi.<br>
+		<br>
+		- une <b>fonctionnalité participant</b> permet aux participants d’insérer des photos sur le site pour les soumettre à la validation dans l'onglet <b>"Soumettre un Défi"</b>. <br>
+		<br>
+		<br>
+		L’interface publique est la page d’accueil du site donnent accès au classement et à la carte localisant les binômes. Nous avons ajouter la possibilité de voir les photos des défis validées par les organisateurs dans l'onglet <b>"Défis"</b>. Nous avons également permis un accès aux profils des équipes - description et photos de profil - dans l'onglet <b>"Equipe"</b>.<br>
+		<br>
+		<br><i>Les onglets suivants détaillent les technologies utilisés dans le front et back end.</i>
+		</p>
+
+	</article>
 
 
 
-</body>
+
+	</div>
+
+	<!-- Sidebar -->
+	<section id="sidebar">
+
+		<!-- Intro -->
+		<section id="intro">
+			<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
+			<header>
+
+			</header>
+		</section>
+
+			<!-- Footer -->
+		<section id="footer">
+			<ul class="icons">
+				<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
+				<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+			</ul>
+			<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+		</section>
+
+	</section>
+
+</div>
+
