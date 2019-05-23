@@ -10,6 +10,8 @@ import { RapportComponent } from './rapport/rapport.component';
 import { BackComponent } from './back/back.component';
 import { FrontComponent } from './front/front.component';
 import {TeamDetailsComponent} from './team-details/team-details.component';
+import { CharteComponent } from './charte/charte.component';
+
 
 
 const routes: Routes = [
@@ -22,6 +24,8 @@ const routes: Routes = [
 	{ path: 'back', component: BackComponent},
 	{ path: 'front', component: FrontComponent},
 	{ path: 'team/:id', component: TeamDetailsComponent},
+	{ path: 'charte', component: CharteComponent},
+
 ];
 
 /*const iD: Team["id"].parseInt() = [('teams/:id/position').split('/')[1]
