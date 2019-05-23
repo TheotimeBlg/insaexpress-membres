@@ -26,6 +26,7 @@ import { FrontComponent } from './front/front.component';
 import { KeycloakHttp, keycloakHttpFactory } from './keycloak/keycloak.http';
 import { KeycloakService } from './keycloak/keycloak.service';
 import {HttpModule, RequestOptions, XHRBackend} from "@angular/http";
+import { TeamDetailsComponent } from './team-details/team-details.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {HttpModule, RequestOptions, XHRBackend} from "@angular/http";
     TeamPositionComponent,
     RapportComponent,
     BackComponent,
-    FrontComponent
+    FrontComponent,
+    TeamDetailsComponent
   ],
 
   imports: [

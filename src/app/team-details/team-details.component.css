@@ -1,0 +1,67 @@
+.defis accomplis{
+    max-height: 66.5vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+
+  .team{
+    > div {
+      padding: 1.2em;
+      cursor: pointer;
+    }
+
+    .team-picture{
+      height: 2.5em;
+    }
+
+    &:hover{
+      background: #e1e1e1;
+    }
+
+
+  }
+}
+
+img
+{
+    display: inline-block;
+    vertical-align: top;
+    float: right;
+}
+
+a {
+
+display: block;
+  margin : auto;
+
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.centrage {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}

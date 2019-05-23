@@ -9,6 +9,8 @@ import { Team } from './data/team.service';
 import { RapportComponent } from './rapport/rapport.component';
 import { BackComponent } from './back/back.component';
 import { FrontComponent } from './front/front.component';
+import {TeamDetailsComponent} from './team-details/team-details.component';
+
 
 const routes: Routes = [
 	{ path: '', component: NewComponent },
@@ -18,7 +20,8 @@ const routes: Routes = [
 	{ path: 'validerdefis', component: ValidatephotosComponent },
 	{ path: 'rapport', component: RapportComponent},
 	{ path: 'back', component: BackComponent},
-	{ path: 'front', component: FrontComponent}
+	{ path: 'front', component: FrontComponent},
+	{ path: 'team/:id', component: TeamDetailsComponent},
 ];
 
 /*const iD: Team["id"].parseInt() = [('teams/:id/position').split('/')[1]
