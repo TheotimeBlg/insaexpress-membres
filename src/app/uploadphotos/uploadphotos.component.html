@@ -56,28 +56,32 @@
 
 		<!-- Intro -->
 		<section id="intro">
-			<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
+			<a class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
 
 		<section>
 				<h1 style="font-size: 200%;">Classement</h1>
 				<div class = "leaderboard">
 				<div class="mini-post">
-				<article  *ngFor="let team of teams">
+				<ul>
+				<li><article  *ngFor="let team of teams| orderBy: 'team.score'">
 					<header>
-						<h3>{{team.name}}</h3>
+
+						<h3><a routerLink="/team/{{team.id}}">{{team.name}}</a></h3>
 						<p>a déjà parcouru {{team.distance/1000}}km</p>
 						<p>{{team.score}}pts</p>
 						<a href="#" class="author"><img src="{{ team.picture }}" alt="" /></a>
 					</header>
-					
+
 				</article>
-				</div>  
+				</li>
+				</ul>
 				</div>
-						
+				</div>
+
 			</section>
 		</section>
 
-		
+
 
 		<!-- Footer -->
 		<section id="footer">

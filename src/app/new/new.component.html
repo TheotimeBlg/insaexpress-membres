@@ -8,9 +8,6 @@
 					<div class="title">
 						<h2><a>Suis les participants</a></h2>
 					</div>
-					<div class="meta">
-						<time class="published" datetime="2015-11-01">November 1, 2015</time>
-					</div>
 				</header>
 				<!-- Déclaration du conteneur de la carte avec l'id "frugalmap" -->
 				<div id="mapfrance"></div>
@@ -26,13 +23,14 @@
 
 		<!-- Intro -->
 		<section id="intro">
-			<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
+			<a class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
 
 		<section>
 				<h1 style="font-size: 200%;">Classement</h1>
 				<div class = "leaderboard">
 				<div class="mini-post">
-				<article  *ngFor="let team of teams">
+				<ul>
+				<li><article  *ngFor="let team of teams| orderBy: 'team.score'">
 					<header>
 
 						<h3><a routerLink="/team/{{team.id}}">{{team.name}}</a></h3>
@@ -42,6 +40,8 @@
 					</header>
 
 				</article>
+				</li>
+				</ul>
 				</div>
 				</div>
 

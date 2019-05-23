@@ -4,6 +4,7 @@ import { AchievementsService } from '../data/achievements.service';
 import {Http} from '@angular/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import { KeycloakService } from '../keycloak/keycloak.service';
+import {OrderModule} from 'ngx-order-pipe';
 
 @Component({
   selector: 'app-validatephotos',

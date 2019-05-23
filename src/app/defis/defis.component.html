@@ -8,10 +8,7 @@
 		<article class="post">
 			<header>
 				<div class="title">
-					<h2><a href="single.html">Liste des défis à réaliser</a></h2>
-				</div>
-				<div class="meta">
-					<time class="published" datetime="2015-11-01">November 1, 2015</time>
+					<h2><a>Liste des défis à réaliser</a></h2>
 				</div>
 			</header>
 		<p *ngFor="let achievement of achievements" class="button large fit" >{{achievement.name}}</p>
@@ -23,24 +20,46 @@
 
 	<section id="sidebar">
 
+		<!-- Intro -->
 		<section id="intro">
-			<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
+			<a class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
+
+		<section>
+				<h1 style="font-size: 200%;">Classement</h1>
+				<div class = "leaderboard">
+				<div class="mini-post">
+				<ul>
+				<li><article  *ngFor="let team of teams| orderBy: 'team.score'">
+					<header>
+
+						<h3><a routerLink="/team/{{team.id}}">{{team.name}}</a></h3>
+						<p>a déjà parcouru {{team.distance/1000}}km</p>
+						<p>{{team.score}}pts</p>
+						<a href="#" class="author"><img src="{{ team.picture }}" alt="" /></a>
+					</header>
+
+				</article>
+				</li>
+				</ul>
+				</div>
+				</div>
+
+			</section>
 		</section>
-
-
 
 
 
 		<!-- Footer -->
 		<section id="footer">
-			<ul class="icons">
-				<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-				<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-				<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
-			</ul>
-			<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+				<ul class="icons">
+					<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
+					<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
 		</section>
+
 	</section>
 	</div>

@@ -1,76 +1,49 @@
-<body class="is-preload">
 
-	<!-- Wrapper -->
-		<div id="wrapper">
+<div id="wrapper">
 
+	<div id="main">
 
-			<!-- Menu -->
-					<section id="menu">
+		<!-- Post -->
+			<article class="post">
+				<header>
+					<div class="title">
+	  					<h2><a>
+							Rapport
+						</a></h2>
+	 					 <h6>FILLANCQ Lucas, JUSKIEWENSKI Léa, BALAGUER Théotime, CONFORTO Déborah</h6>
+					</div>
+				</header>
 
-						<!-- Search -->
-							<section>
-								<form class="search" method="get" action="#">
-									<input type="text" name="query" placeholder="Search" />
-								</form>
-							</section>
+				<div class="menu1"> <!-- début de la boite contenant les onglets -->
+				  <a class="onglet" routerLink="../rapport"> INTRODUCTION </a>
+	<a class="onglet" routerLink="../back"> BACK </a>
+				  <span class="onglet-actif"> FRONT </span> <!-- onglet inactif -->
 
+				</div>
 
-
-						<!-- Actions -->
-							<section>
-								<ul class="actions stacked">
-									<li><a href="#" class="button large fit">Log In</a></li>
-								</ul>
-							</section>
-
-					</section>
-
-			<!-- Main -->
-				<div id="main">
-
-					<!-- Post -->
-						<article class="post">
-							<header>
-                <div class="title">
-                  <h2><a>
-										Rapport
-									</a></h2>
-                  <h6>FILLANCQ Lucas, JUSKIEWIENSKI Léa, BALAGUER Théotime, CONFORTO Déborah</h6>
-								</div>
-								<div class="meta">
-									<time class="published" datetime="2015-11-01">November 1, 2015</time>
-								</div>
-							</header>
-							<body>
-
-							<div class="menu1"> <!-- début de la boite contenant les onglets -->
-							  <a class="onglet" routerLink="../rapport"> INTRODUCTION </a>
-                <a class="onglet" routerLink="../back"> BACK </a>
-							  <span class="onglet-actif"> FRONT </span> <!-- onglet inactif -->
-
-							</div>
-
-							</body>
-
-							<br><h3>Page d’accueil public/membre</h3><p style="text-indent: 30px;">
-Les pages d’accueil public et membres sont en fait pratiquement identiques à la seule différence qu’elles n’ont pas exactement les mêmes onglets dans la barre de menu à l’entête de la page (nous expliqueront cela plus tard). En effet, elles affichent toutes deux le classement et la carte pour suivre le parcours des équipes ainsi que leur score. <br>
-Pour afficher le classement, on utilise une fonction getTeams() dans notre fichier typescript du composant “new” qui va récupérer toutes les équipes contenues dans notre base de données avec chacun de leurs champs. Ensuite, dans le fichier html, on utilise une boucle *ngFor pour afficher le nom, la distance parcourue, le score et la photo de chaque équipe contenue dans notre table Team de notre base de donnée plus un bouton “Détail” qui nous redirige vers une page de détail de l’équipe en question (expliqué dans la partie suivante). <br>
-Puis, pour la carte, on déclare notre carte créée avec leaflet et contenue dans “mapfrance” puis on déclare ce conteneur dans le html afin que la carte s’affiche bien sur la page. On ajoute dans la fonction getTeams() du typescript une boucle teams.forEach() qui va parcourir la table Team afin de trouver les longitudes et latitudes minimum et maximum pour pouvoir centrer ensuite la carte de façon à ce que toutes les équipes soient visibles sur la carte lorsque la page s’affiche. On a également ajouté la création de marqueurs à ajouter sur la carte sur la position de l’équipe avec comme icône la photo de l’équipe. Mais ceci n’étant pas une priorité pour la finalité de notre projet, cela sera donc finalisé après la soutenance pour accorder cette fonctionnalité au public de la prochaine course insa-express.<br>
-</p>
-<h3>Détails des équipes</h3><p style="text-indent: 30px;">
+				<br><h3>Page d’accueil public/membre</h3><p style="text-indent: 30px;">
+	Les pages d’accueil public et membres sont en fait pratiquement identiques à la seule différence qu’elles n’ont pas exactement les mêmes onglets dans la barre de menu à l’entête de la page (nous expliqueront cela plus tard). En effet, elles affichent toutes deux le classement et la carte pour suivre le parcours des équipes ainsi que leur score. <br>
+	<br>
+	Pour afficher le classement, on utilise une fonction getTeams() dans notre fichier typescript du composant “new” qui va récupérer toutes les équipes contenues dans notre base de données avec chacun de leurs champs. Ensuite, dans le fichier html, on utilise une boucle *ngFor pour afficher le nom, la distance parcourue, le score et la photo de chaque équipe contenue dans notre table Team de notre base de donnée plus un bouton “Détail” qui nous redirige vers une page de détail de l’équipe en question (expliqué dans la partie suivante). <br>
+	<br>
+	Puis, pour la carte, on déclare notre carte créée avec leaflet et contenue dans “mapfrance” puis on déclare ce conteneur dans le html afin que la carte s’affiche bien sur la page. On ajoute dans la fonction getTeams() du typescript une boucle teams.forEach() qui va parcourir la table Team afin de trouver les longitudes et latitudes minimum et maximum pour pouvoir centrer ensuite la carte de façon à ce que toutes les équipes soient visibles sur la carte lorsque la page s’affiche. On a également ajouté la création de marqueurs à ajouter sur la carte sur la position de l’équipe avec comme icône la photo de l’équipe. Mais ceci n’étant pas une priorité pour la finalité de notre projet, cela sera donc finalisé après la soutenance pour accorder cette fonctionnalité au public de la prochaine course insa-express.<br>
+	</p>
+	<h3>Détails des équipes</h3><p style="text-indent: 30px;">
 	Lorsqu’on clique sur “Détails” dans la case d’une équipe du classement, on est redirigé vers une page qui affiche le composant “TeamDetails” correspondant à l’équipe sélectionnée grâce à la route “teams/:id”. Ce composant utilise également la même fonction getTeams() expliquée précédemment ce qui lui permet d’afficher le nom, l’id, le score, la distance parcourue, la photo de l’équipe correspondant à l’id dans une première division de la page. Puis, dans une seconde division, on créé un scrollbar dans le html avec une boucle *ngFor pour afficher tous les défis réalisés par l’équipe correspondant à l’id.<br>
-</p>
-<h3>Onglets de la barre de menu</h3><p style="text-indent: 30px;">
+	</p>
+	<h3>Onglets de la barre de menu</h3><p style="text-indent: 30px;">
 	Les onglets pour le public et les membres sont les mêmes à l’exception de “Soumettre un défi” et “Valider un défi” qui sont réservés aux membres. Nous parlerons de ces derniers dans la partie suivante. Pour l’instant, nous avons donc seulement les onglets “Classement”, “Carte”, “Défis”, “Charte du participant” et “Se Connecter” (qui est remplacé par l’onglet “Déconnexion” quand on passe sur l’interface membres en se connectant). <br>
-Pour les deux premiers, c’est simple, puisqu’on a juste un décalage de la page vers l’emplacement de la carte ou du classement grâce à un RouterLink vers la division d’ID “leaderboard” (pour le classement) ou “mapfrance” (pour la carte). <br>
-Ensuite, l’onglet “Défis” nous dirige vers une autre page grâce à une nouvelle route “défis” vers un composant “défis”. Il en est de même, pour l’onglet “Charte du participant” avec la route et le composant du même nom “charte”. La page ”Charte du participant” affiche l’image de cette charte contenu dans le dossier “assets” grâce à une balise "img src=<I>chemin vers l’image</I>". Et, la page “Défis” nous affiche des boutons pour chaque défis à gauche et des boutons pour chaque équipes à droite. Les boutons des équipes redirige la page vers les détails de l’équipe sur laquelle on a cliqué, grâce à la route “teams/:id” (on a donc bien les défis réalisés par l’équipe). Et lorsqu’on clique sur un bouton défi, on est redirigé vers une page qui affiche une liste des équipes qui ont relevés ce défi avec la photo qu’elles ont utilisée pour le relever. Pour afficher ces listes, on procède de la même façon que précédemment pour le classement avec la fonction getTeams() mais en récupérant plutôt les éléments de la table TeamAchievement avec ses champs correspondants (team, défi, picture) dans le typescript et la boucle *ngFor dans le html du composant.<br>
-Enfin, l’onglet “Se Connecter”
+	<br>
+	Pour les deux premiers, c’est simple, puisqu’on a juste un décalage de la page vers l’emplacement de la carte ou du classement grâce à un RouterLink vers la division d’ID “leaderboard” (pour le classement) ou “mapfrance” (pour la carte). <br>
+	<br>
+	Ensuite, l’onglet “Défis” nous dirige vers une autre page grâce à une nouvelle route “défis” vers un composant “défis”. Il en est de même, pour l’onglet “Charte du participant” avec la route et le composant du même nom “charte”. La page ”Charte du participant” affiche l’image de cette charte contenu dans le dossier “assets” grâce à une balise "img src=<I>chemin vers l’image</I>". Et, la page “Défis” nous affiche des boutons pour chaque défis à gauche et des boutons pour chaque équipes à droite. Les boutons des équipes redirige la page vers les détails de l’équipe sur laquelle on a cliqué, grâce à la route “teams/:id” (on a donc bien les défis réalisés par l’équipe). Et lorsqu’on clique sur un bouton défi, on est redirigé vers une page qui affiche une liste des équipes qui ont relevés ce défi avec la photo qu’elles ont utilisée pour le relever. Pour afficher ces listes, on procède de la même façon que précédemment pour le classement avec la fonction getTeams() mais en récupérant plutôt les éléments de la table TeamAchievement avec ses champs correspondants (team, défi, picture) dans le typescript et la boucle *ngFor dans le html du composant.<br>
+	Enfin, l’onglet “Se Connecter”
 
-</p>
-<h3>L'identification</h3><p style="text-indent: 30px;">
+	</p>
+	<h3>L'identification</h3><p style="text-indent: 30px;">
 	Par soucis d'ergonomie, nous avons décidé de <b>séparer complètement l'interface publique et l'interface des membres de la course</b>, participants comme organisateur. Pour gérer l'authentification des ces profils, nous avons décidé d'utiliser un service d'identification externe open source : <a class="btn btn-primary" href="https://www.keycloak.org/" target="_blank">Keycloak</a>.
 	Développé par le MIT, ce service de gestion des accès très sécurisé est un véritable plus pour notre projet. Il nous offre une interface d'administration des utilisateurs performante, ainsi qu'une grande souplesse dans la gestion des différents accès.
-	<br>
+	<br><br>
 	Ce service "out of the box" tourne sur un serveur dédié. Notre serveur "membres" capture toute connection non-identifiée et redirige la requête vers la page de connexion de Keycloak.
 	Ici, l'utilisateur peut se connecter à l'aide d'un mot de passe temporaire et directement le changer, puis accéder au site "membres".
 	Cet outil nous permet aussi de <b>gérer les accès au sein d'une page.</b> Ainsi, les utilisateurs déclarés comme "Organisateurs" sont les seuls à avoir la possibilité de valider des défis et d'attribuer des points via l'onglet "Valider des défis".
@@ -81,55 +54,25 @@ Enfin, l’onglet “Se Connecter”
 	L'implémentation de ce service d'identification nous a pris du temps, car étant une feature très complète, elle avait un grand coup d'entrée. De plus, la documentation de keycloak reste légère et le service et relativement nouveau, ce qui a durci la tâche.
 	Magré cela, nous sommes content du résultat et nous pensons surtoût que Keycloak est <b>plus sécurisé</b> qu'un service d'authentification "fait main" ou même que OAuth.
 
-</p>
+	</p>
 
-						</article>
-
-
-
-
-				</div>
-
-			<!-- Sidebar -->
-				<section id="sidebar">
-
-					<!-- Intro -->
-						<section id="intro">
-							<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
-							<header>
-
-							</header>
-						</section>
-
-
-
-									<!--	<app-team-detai [team]="selectedTeam"></app-team-detai>-->
+			</article>
 
 
 
 
-					<!-- Footer -->
-						<section id="footer">
-							<ul class="icons">
-								<li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-								<li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
-							</ul>
-							<p class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>. Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-						</section>
+	</div>
 
+	<!-- Sidebar -->
+		<section id="sidebar">
+
+			<!-- Intro -->
+				<section id="intro">
+					<a href="#" class="logo"><img src="/assets/images/insaexpress_logo.png" alt="" /></a>
+					<header>
+
+					</header>
 				</section>
 
-		</div>
-
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
-
-
-</body>
+		</section>
+</div>

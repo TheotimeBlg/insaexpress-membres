@@ -28,6 +28,7 @@ import { KeycloakService } from './keycloak/keycloak.service';
 import {HttpModule, RequestOptions, XHRBackend} from "@angular/http";
 import { TeamDetailsComponent } from './team-details/team-details.component';
 import { CharteComponent } from './charte/charte.component';
+import {OrderModule} from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { CharteComponent } from './charte/charte.component';
     NbLayoutModule,
     NbCardModule,
     NbListModule,
-    NgbModule
+    NgbModule,
+    OrderModule
   ],
   providers: [
     HttpClientModule,
