@@ -8,6 +8,7 @@ import { Achievement, Team, TeamsService, TeamAchievement, File } from './../dat
 import { AchievementsService } from './../data/achievements.service';
 import { UploadService } from '../upload.service';
 import {environment} from '../../environments/environment';
+import {OrderModule} from 'ngx-order-pipe';
 
 @Component({
   selector: 'app-uploadphotos',
@@ -48,6 +49,7 @@ export class UploadphotosComponent implements OnInit {
     });
 
     this.teamsService.getTeams().subscribe((teams) => {
+      teams.sort((a, b) => b.score - a.score);
       this.teams = teams;
     });
 

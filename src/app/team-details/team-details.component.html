@@ -35,7 +35,8 @@
 					<nb-layout-column>
 						<div id="accomplis">
 							<div *ngFor="let ta of this.team_achievements ">
-							<section id="sidebar" style="width: 100%;">
+							<div *ngIf="ta.validation" id="sidebar" style="width: 100%;">
+
 							<img class="img" [src]="ta.photo.file" style="width: 50%; height: 50%;">
 
 
@@ -44,7 +45,7 @@
 								<span class="image right"></span>
 							</h3>
 							<p style="padding-bottom: 70%">Attribué {{ta.created_at}}</p>
-							</section>
+							</div>
 							</div>
 
 						</div>

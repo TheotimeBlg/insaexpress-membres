@@ -11,9 +11,6 @@
 			<div class="title">
 				<h2><a>Relève des défis</a></h2>
 			</div>
-			<div class="meta">
-				<time class="published" datetime="2015-11-01">November 1, 2015</time>
-			</div>
 		</header>
 
 		<section>
@@ -69,7 +66,7 @@
 						<h3><a routerLink="/team/{{team.id}}">{{team.name}}</a></h3>
 						<p>a déjà parcouru {{team.distance/1000}}km</p>
 						<p>{{team.score}}pts</p>
-						<a href="#" class="author"><img src="{{ team.picture }}" alt="" /></a>
+						<a href="#" class="author" routerLink="/team/{{team.id}}"><img src="{{ team.picture }}" alt="" /></a>
 					</header>
 
 				</article>
